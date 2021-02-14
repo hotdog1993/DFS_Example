@@ -51,6 +51,25 @@ class Graph{
       visit(r);
     }
   }
+  void bfs() {
+    bfs(0);
+  }
+  void bfs(int index) {
+    Node root = nodes[index];
+    Queue<Node> queue = new Queue<Node>();
+    queue.enqueue(root);
+    root.marked = true;
+    while(!queue.isEmpty()) {
+      Node r = queue.dequeue();
+      for(Node n : r.adjacent) {
+        if(n.marked == false) {
+          n.marked = true;
+          queue.enqueue(n);
+        }
+      }
+      visit(r);
+    }
+  }
 
 
 

@@ -10,7 +10,7 @@ class Queue<T> {
   private Node<T> first;
   private Node<T> last;
 
-  public void add(T item) {
+  public void enqueue(T item) {
     Node<T> t = new Node<T>(item);
     if(last != null) {    //데이터가 있을 때 맨 뒤에 넣음
       last.next = t;
@@ -20,7 +20,7 @@ class Queue<T> {
       first = last;
     }
   }
-  public T remove() {
+  public T dequeue() {
     T data = first.data;
     first = first.next;
 
